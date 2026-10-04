@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>E-Commerce Analytics | Lokesh Jangid</title>
+<script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+<style>
+body{margin:0;background:#0b1020;color:#edf2ff;font-family:Inter,Segoe UI,Arial,sans-serif}
+.wrap{max-width:1200px;margin:auto;padding:36px 22px}
+.hero{padding:28px;border:1px solid #25314e;background:linear-gradient(135deg,#17213a,#10182b);border-radius:22px}
+h1{margin:0 0 8px;font-size:34px}.muted{color:#9ca9c8}
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:18px 0}.card{background:#121a2f;border:1px solid #26314a;border-radius:18px;padding:18px}.label{text-transform:uppercase;color:#9ca9c8;font-size:12px;letter-spacing:.08em}.value{font-size:28px;font-weight:800;margin-top:6px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.panel{background:#121a2f;border:1px solid #26314a;border-radius:18px;padding:12px}
+.note{margin-top:16px;padding:16px;background:#0f1930;border:1px solid #253a5e;border-radius:16px;color:#cfd7ec}
+@media(max-width:800px){.cards,.grid{grid-template-columns:1fr 1fr}.grid{grid-template-columns:1fr}} @media(max-width:500px){.cards{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="hero">
+    <h1>📊 E-Commerce Sales & Customer Analytics</h1>
+    <div class="muted">Python • SQL • Pandas • Streamlit/Plotly • Business Intelligence</div>
+    <p class="muted">Recruiter preview of the analytics project. The full interactive application is available through the repository's Streamlit deployment.</p>
+  </div>
+  <div class="cards">
+    <div class="card"><div class="label">Orders analyzed</div><div class="value">5,000+</div></div>
+    <div class="card"><div class="label">Order items</div><div class="value">6,900+</div></div>
+    <div class="card"><div class="label">SQL analyses</div><div class="value">16</div></div>
+    <div class="card"><div class="label">Dashboard</div><div class="value">Interactive</div></div>
+  </div>
+  <div class="grid">
+    <div class="panel"><div id="chart1"></div></div>
+    <div class="panel"><div id="chart2"></div></div>
+  </div>
+  <div class="note"><b>Note:</b> The repository bundles synthetic sample data for immediate execution. For the portfolio version, replace it with the public Target/Olist dataset and publish your verified results.</div>
+</div>
+<script>
+const months=["2017-01","2017-03","2017-05","2017-07","2017-09","2017-11","2018-01","2018-03","2018-05","2018-07"];
+const revenue=[220000,255000,290000,310000,350000,420000,455000,470000,510000,565000];
+Plotly.newPlot("chart1",[{x:months,y:revenue,type:"scatter",mode:"lines+markers",line:{color:"#62e6c8",width:3},marker:{size:7}}],{title:"Illustrative Monthly Revenue Trend",paper_bgcolor:"rgba(0,0,0,0)",plot_bgcolor:"rgba(0,0,0,0)",font:{color:"#edf2ff"},margin:{l:40,r:20,t:55,b:40},xaxis:{gridcolor:"#26314a"},yaxis:{gridcolor:"#26314a",tickprefix:"$"}},{displayModeBar:false,responsive:true});
+const cats=["Computers & Accessories","Health & Beauty","Home & Bath","Furniture & Decor","Sports & Leisure","Telephony"];
+const rev2=[108000,98000,94000,89000,76000,68000];
+Plotly.newPlot("chart2",[{x:rev2,y:cats,type:"bar",orientation:"h",marker:{color:"#8b7cff"}}],{title:"Illustrative Category Revenue",paper_bgcolor:"rgba(0,0,0,0)",plot_bgcolor:"rgba(0,0,0,0)",font:{color:"#edf2ff"},margin:{l:140,r:20,t:55,b:40},xaxis:{gridcolor:"#26314a",tickprefix:"$"},yaxis:{gridcolor:"#26314a"}},{displayModeBar:false,responsive:true});
+</script>
+</body>
+</html>
