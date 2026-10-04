@@ -1,0 +1,21 @@
+# Python
+.venv/
+venv/
+__pycache__/
+*.pyc
+
+# Environment / secrets
+.env
+.streamlit/secrets.toml
+
+# Local database
+data/analytics.db
+
+# Full raw dataset
+data/raw/
+
+# Validation output
+validation_outputs/
+
+# OS/editor
+.DS_Store
